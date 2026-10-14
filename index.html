@@ -270,11 +270,6 @@ footer{border-top:1px solid var(--rule);padding:1.8rem 1.5rem;text-align:center;
 .quant-dot{width:6px;height:6px;border-radius:50%;border:none;background:var(--rule);cursor:pointer;padding:0;transition:.15s}
 .quant-dot.on{background:var(--accent);width:1.2rem;border-radius:99px}
 
-.sequel{text-align:center}
-.sequel p.sequel-title{text-align:center;font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--text);margin:0 auto .5rem}
-section.sequel p{text-align:center;max-width:620px;margin:0 auto 1.1rem;color:var(--muted)}
-.sequel-btn{display:inline-flex;align-items:center;padding:.55rem 1.2rem;border-radius:6px;background:var(--accent);color:#fff;font-weight:600;font-size:.92rem}
-.sequel-btn:hover{background:#5a4fb8;color:#fff;text-decoration:none}
 
 .qual-progress{width:140px;height:3px;border-radius:99px;background:var(--rule);overflow:hidden;margin:.35rem auto .2rem;transition:opacity .3s ease}
 .qual-progress i{display:block;height:100%;width:0;background:var(--accent)}
@@ -298,12 +293,12 @@ section.sequel p{text-align:center;max-width:620px;margin:0 auto 1.1rem;color:va
 html.leaving body{opacity:0;transform:translateY(-14px);transition:opacity .55s ease,transform .55s ease}
 @media(prefers-reduced-motion:reduce){html.leaving body{transition:none}}
 </style><style>html.arriving body{animation:arrive .8s ease backwards}@keyframes arrive{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){html.arriving body{animation:none}}</style>
-<script>if(/wasserstein-tilted-flow-maps|localhost:8793/.test(document.referrer))document.documentElement.classList.add('arriving');</script>
+<script>if(/flow-map-reward-alignment\.github\.io|localhost:87(85|92|93)/.test(document.referrer))document.documentElement.classList.add('arriving');</script>
 </head><body>
 
 <div class="bar"><div class="in"><span class="brand">How to Guide Your Flow</span><nav>
 <a href="#abstract">TL;DR</a><a href="#motivation">Motivation</a><a href="#contributions">Contributions</a><a href="#idea">Key idea</a><a href="#method">Method</a><a href="#results">Results</a><a href="#bibtex">BibTeX</a>
-</nav><a class="swap" href="https://flow-map-reward-alignment.github.io/wasserstein-tilted-flow-maps/" data-fade>More flow maps? <span aria-hidden="true">🤠</span></a></div></div>
+</nav><a class="swap" href="https://flow-map-reward-alignment.github.io/" data-fade>More flow maps? <span aria-hidden="true">🤠</span></a></div></div>
 
 <header class="head">
 <div class="venue">ICML 2026</div>
@@ -601,12 +596,6 @@ html.leaving body{opacity:0;transform:translateY(-14px);transition:opacity .55s 
 </div>
 </section>
 
-<section id="sequel" class="sequel">
-<p class="sequel-title">👉 Check out the sequel!</p>
-<p>We extend the deterministic optimal control perspective to reward fine-tuning in WTF. Flow maps enable simulation-free reinforcement learning, leading to dramatic gains in training efficiency.</p>
-<a class="sequel-btn" href="https://flow-map-reward-alignment.github.io/wasserstein-tilted-flow-maps/" data-fade>WTF?! Wasserstein-Tilted Flow Maps</a>
-</section>
-
 <section id="bibtex">
 <h2>BibTeX</h2>
 <div class="bibbox"><button class="copy" onclick="copyBib()"><i class="fas fa-copy"></i> Copy</button>
@@ -888,6 +877,6 @@ function copyBib(){navigator.clipboard.writeText(document.querySelector('.bibbox
 </script>
 <script>
 // Fade out, then open the counterpart site, which fades in.
-(function(){var L={'flow-map-reward-guidance':'http://localhost:8792/','wasserstein-tilted-flow-maps':'http://localhost:8793/'};if(/^(localhost|127\.0\.0\.1)$/.test(location.hostname))document.querySelectorAll('a[data-fade]').forEach(function(a){var u=new URL(a.href);Object.keys(L).forEach(function(k){if(u.pathname.indexOf('/'+k+'/')===0)a.href=L[k]+u.hash;});});document.querySelectorAll('a[data-fade]').forEach(function(a){a.addEventListener('click',function(e){if(e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0)return;e.preventDefault();var d=document.documentElement;d.classList.remove('arriving');void document.body.offsetWidth;d.classList.add('leaving');setTimeout(function(){location.href=a.href},550)})});window.addEventListener('pageshow',function(){document.documentElement.classList.remove('leaving')});})();
+(function(){var L={'':'http://localhost:8785/'};if(/^(localhost|127\.0\.0\.1)$/.test(location.hostname))document.querySelectorAll('a[data-fade]').forEach(function(a){var u=new URL(a.href);if(u.pathname==='/')a.href=L['']+u.hash;});document.querySelectorAll('a[data-fade]').forEach(function(a){a.addEventListener('click',function(e){if(e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0)return;e.preventDefault();var d=document.documentElement;d.classList.remove('arriving');void document.body.offsetWidth;d.classList.add('leaving');setTimeout(function(){location.href=a.href},550)})});window.addEventListener('pageshow',function(){document.documentElement.classList.remove('leaving')});})();
 </script>
 </body></html>
